@@ -1,3 +1,15 @@
+---
+name: dors-loopcraft
+description: "Use when the user wants to design an autonomous agent loop, a /loop or cron automation with dynamic feedback, or asks whether a repetitive task needs a loop vs a one-shot prompt — before authoring any /loop, /goal, or orchestrator command for Claude Code, Codex, or similar agents."
+version: 2.0.0
+author: Davi & Hermes
+license: MIT
+compatibility: "Designed for Claude Code, Hermes Agent, Gemini CLI, Codex CLI, and other Agent Skills-compatible tools. Requires git, bash. Works on linux, macos, windows."
+metadata:
+  hermes:
+    tags: [loop, orchestration, autonomous-agents, safety, design]
+    related_skills: [ai-coding-agents, hermes-agent, writing-plans, systematic-debugging]
+---
 # D.O.R.S. Loopcraft
 
 ## Overview
