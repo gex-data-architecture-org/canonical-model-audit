@@ -23,9 +23,21 @@ Auditoria do modelo canônico da equipe de Dados GEX.
 ├── .github/copilot-instructions.md  ← GitHub Copilot
 │
 ├── docs/                        # Documentação da auditoria
+│   ├── parecer-correcoes-auditoria-davi.md
+│   ├── parecer-implementacao-assinaturas-canonico.md
+│   └── tasks-clickup-canonico-buygoods.md
+│
 ├── reports/                     # Relatórios gerados
 └── scripts/                     # Scripts ETL/análise
 ```
+
+## Documentos da Auditoria
+
+| Documento | Conteúdo |
+|-----------|----------|
+| `parecer-correcoes-auditoria-davi.md` | Correções aplicadas pós-auditoria: 12 itens corrigidos e validados em produção, 3 caracterizados como comportamento esperado, 3 decisões de negócio resolvidas |
+| `parecer-implementacao-assinaturas-canonico.md` | Implementação de assinaturas no modelo canônico: 7 entregas (`fct_cobrancas`, `fct_assinaturas`, nova chave de funil, etc.), +US$ 38,4k de receita recuperada |
+| `tasks-clickup-canonico-buygoods.md` | Tasks ClickUp: 7 para atuar agora, 4 impedimentos (aguardando BuyGoods), 2 ações de desbloqueio |
 
 ## Modelo Agnóstico de Skills
 
@@ -42,30 +54,11 @@ Seguimos o padrão **[Agent Skills](https://agentskills.io)** — spec aberta cr
 | **Cursor** | `.cursor/rules/<name>.mdc` | Project rules |
 | **GitHub Copilot** | `.github/copilot-instructions.md` | Project instructions |
 
-### Formato canônico (Agent Skills spec)
-
-```yaml
----
-name: nome-da-skill        # required: lowercase, hyphens, max 64
-description: "..."         # required: what + when to use, max 1024
-license: MIT               # optional
-compatibility: "..."       # optional: environment requirements
-metadata:                  # optional: arbitrary key-value
-  version: "1.0"
-  author: "..."
----
-
-# Corpo em markdown
-...
-```
-
 ### Fluxo de edição
 
 1. **Edite** apenas `skills/<name>/SKILL.md`
 2. **Rode** `bash skills/<name>/build.sh`
 3. **Commite** as cópias geradas (`.claude/`, `.gemini/`, wrappers raiz)
-
-> Nunca edite `.claude/skills/` ou `.gemini/skills/` diretamente — são cópias do canônico.
 
 ## Escopo da Auditoria
 
